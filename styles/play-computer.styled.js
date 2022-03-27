@@ -12,7 +12,8 @@ export const GameScoreContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   border-radius: 5px;
-  padding: 20px;
+  padding: 0 20px;
+  height: 70px;
   a {
     transition: all 0.2s ease-in-out;
     :hover {
@@ -24,7 +25,9 @@ export const GameScoreContainer = styled.div`
 export const ScoresContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 100%;
+  padding: 10px;
 `;
 
 export const Message = styled.h1`

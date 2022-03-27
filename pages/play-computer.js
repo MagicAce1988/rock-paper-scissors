@@ -18,6 +18,7 @@ import {
   BottomMessage,
   GameScoreContainer,
   Message,
+  ScoresContainer,
   TopSection,
 } from '../styles/play-computer.styled';
 
@@ -107,10 +108,10 @@ const PlayComputer = () => {
             </a>
           </Link>
           <Message>{message}</Message>
-          <div>
+          <ScoresContainer>
             <div>Wins: {wins}</div>
             <div>Losses: {losses}</div>
-          </div>
+          </ScoresContainer>
         </GameScoreContainer>
         {!!yourChoice && !!opponentChoice && (
           <BottomMessage>{bottomMessages[currentResult]}</BottomMessage>
