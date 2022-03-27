@@ -2,6 +2,8 @@ import Rock from './../public/rock.png';
 import Paper from './../public/paper.png';
 import Scissors from './../public/scissors.png';
 
+export const githubLink = 'https://github.com/MagicAce1988';
+
 export const gameChoices = [
   {
     id: 1,

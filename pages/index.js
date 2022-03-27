@@ -13,8 +13,8 @@ import {
   Button,
 } from './../styles/index.styled';
 import { useEffect, useState } from 'react';
-import Footer from '../components.js/Footer';
 import { useRouter } from 'next/router';
+import Footer from './../components/Footer/Footer';
 
 const Home = () => {
   // variables and state

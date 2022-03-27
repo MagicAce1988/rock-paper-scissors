@@ -7,6 +7,7 @@ export const FooterContainer = styled.div`
     padding: 5px;
     margin: 10px;
     background-color: rgb(4, 151, 209);
+    line-height: 24px;
   }
 
   > p:first-of-type {

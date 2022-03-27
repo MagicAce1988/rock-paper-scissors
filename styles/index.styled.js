@@ -29,11 +29,13 @@ export const GameTitle = styled.h1`
 export const ImagesContainer = styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: ${({ withWrap }) => (withWrap ? 'wrap' : 'no-wrap')};
   justify-content: center;
 `;
 
 export const ImageContainer = styled.div`
   width: ${({ imageSize }) => `${imageSize}px`};
+  cursor: ${({ withPointer }) => (withPointer ? 'pointer' : 'default')};
   border-radius: 50%;
   background-color: #fff;
   display: flex;
@@ -41,10 +43,14 @@ export const ImageContainer = styled.div`
   justify-content: center;
   aspect-ratio: 1 / 1;
   border: 1vw solid rgba(43, 87, 99, 0.88);
-  margin-left: 1vw;
-  margin-right: 1vw;
+  margin: 1vw 2vw;
   opacity: 0.85;
   user-select: none;
+  min-width: 120px;
+  transition: all 0.2s ease-in-out;
+  :hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const BorderRadiusAdjustment = styled.div`
