@@ -1,5 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import ParticleEffectButton from 'react-particle-effect-button';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { gameChoices } from './../utils/constants';
 import { getWindowDimensions } from './../utils/helpers';
 import {
@@ -11,7 +14,7 @@ import {
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Footer from './../components/Footer/Footer';
-import { GameScoreContainer } from '../styles/play-computer.styled';
+import { GameScoreContainer, Message } from '../styles/play-computer.styled';
 
 const PlayComputer = () => {
   // variables and state
@@ -20,6 +23,13 @@ const PlayComputer = () => {
   const [losses, setLosses] = useState(0);
   const [presentScore, setPresentScore] = useState('draw');
   const [imageSize, setImageSize] = useState(200);
+  const [gameStarted, setGameStarted] = useState(false);
+  const topMessages = {
+    [wins > losses]: 'Doing Well',
+    [losses > wins]: `Don't worry`,
+    [losses === wins]: 'Keep Trying',
+  };
+  const message = gameStarted ? topMessages[true] : 'Start the Game';
 
   // handlers and functions
   const updateSize = () => {
@@ -42,7 +52,12 @@ const PlayComputer = () => {
   return (
     <Container>
       <GameScoreContainer>
-        <p>HomeIcon</p>
+        <Link href="/">
+          <a>
+            <FontAwesomeIcon icon={faHome} width={40} />
+          </a>
+        </Link>
+        <Message>{message}</Message>
         <div>
           <div>Wins: ${wins}</div>
           <div>Losses: ${losses}</div>

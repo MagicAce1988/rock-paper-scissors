@@ -74,4 +74,8 @@ export const Button = styled.button`
   margin: 1vh 1vw;
   min-width: 225px;
   border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  :hover {
+    transform: scale(1.05);
+  }
 `;
