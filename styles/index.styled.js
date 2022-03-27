@@ -42,14 +42,23 @@ export const ImageContainer = styled.div`
   align-items: center;
   justify-content: center;
   aspect-ratio: 1 / 1;
-  border: 1vw solid rgba(43, 87, 99, 0.88);
+  border: ${({ yourChoice, opponentChoice }) =>
+    `1vw solid ${
+      yourChoice && !opponentChoice
+        ? 'rgb(54, 255, 73)'
+        : opponentChoice && !yourChoice
+        ? 'rgb(255, 13, 85)'
+        : 'rgba(43, 87, 99, 0.88)'
+    }`};
   margin: 1vw 2vw;
   opacity: 0.85;
   user-select: none;
   min-width: 120px;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  transform: ${({ scaled }) => (scaled ? 'scale(1.1)' : 'scale(1.0)')};
   :hover {
-    transform: scale(1.1);
+    transform: ${({ withPointer, scaled }) =>
+      withPointer || scaled ? 'scale(1.1)' : 'scale(1.0)'};
   }
 `;
 

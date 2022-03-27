@@ -17,10 +17,13 @@ import Footer from './../components/Footer/Footer';
 import {
   BottomMessage,
   GameScoreContainer,
+  Losses,
   Message,
   ScoresContainer,
   TopSection,
+  Wins,
 } from '../styles/play-computer.styled';
+import { useRef } from 'react';
 
 const PlayComputer = () => {
   // variables and state
@@ -30,6 +33,7 @@ const PlayComputer = () => {
   const [yourChoice, setYourChoice] = useState(null);
   const [opponentChoice, setOpponentChoice] = useState(null);
   const [currentResult, setCurrentResult] = useState('');
+  const [currentScaledCircle, setCurrentScaledCircle] = useState(0);
   const [imageSize, setImageSize] = useState(200);
   const [gameStarted, setGameStarted] = useState(false);
   const topMessages = {
@@ -47,6 +51,8 @@ const PlayComputer = () => {
         }
       : {};
 
+  const animateInterval = useRef();
+
   // handlers and functions
 
   const playAgainHandler = () => {
@@ -60,6 +66,8 @@ const PlayComputer = () => {
     setYourChoice(gameChoice);
 
     setTimeout(() => {
+      clearInterval(animateInterval.current);
+      setCurrentScaledCircle(0);
       setOpponentChoice(
         gameChoices[Math.floor(Math.random() * gameChoices.length)]
       );
@@ -74,6 +82,14 @@ const PlayComputer = () => {
       200
     );
     setImageSize(size);
+  };
+
+  const animateCircles = () => {
+    animateInterval.current = setInterval(() => {
+      setCurrentScaledCircle((current) =>
+        current + 1 > gameChoices.length ? 1 : current + 1
+      );
+    }, 300);
   };
 
   // effects
@@ -95,8 +111,11 @@ const PlayComputer = () => {
         setLosses(losses + 1);
         setCurrentResult('loss');
       }
+    } else if (yourChoice) {
+      animateCircles();
     }
-  }, [yourChoice, opponentChoice, gameStarted]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [yourChoice, opponentChoice]);
 
   return (
     <Container>
@@ -109,8 +128,8 @@ const PlayComputer = () => {
           </Link>
           <Message>{message}</Message>
           <ScoresContainer>
-            <div>Wins: {wins}</div>
-            <div>Losses: {losses}</div>
+            <Wins>Wins: {wins}</Wins>
+            <Losses>Losses: {losses}</Losses>
           </ScoresContainer>
         </GameScoreContainer>
         {!!yourChoice && !!opponentChoice && (
@@ -125,6 +144,9 @@ const PlayComputer = () => {
       <ImagesContainer withWrap={true}>
         {gameChoices.map(({ id, image, choice }) => (
           <ImageContainer
+            scaled={id === currentScaledCircle}
+            yourChoice={id === yourChoice?.id}
+            opponentChoice={id === opponentChoice?.id}
             onClick={() => !yourChoice && choiceHandler(id)}
             key={id}
             imageSize={imageSize}

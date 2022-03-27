@@ -4,6 +4,16 @@ export const TopSection = styled.div`
   width: 75vw;
 `;
 
+export const Wins = styled.p`
+  color: rgb(54, 255, 73);
+  margin: 0;
+`;
+
+export const Losses = styled.p`
+  color: rgb(255, 13, 85);
+  margin: 0;
+`;
+
 export const GameScoreContainer = styled.div`
   display: flex;
   justify-content: space-between;
