@@ -21,8 +21,13 @@ export const GameScoreContainer = styled.div`
   }
 `;
 
+export const ScoresContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
 export const Message = styled.h1`
-  line-height: 20px;
   color: #fff;
   font-family: 'Merriweather', serif;
   font-size: calc(12px + 1.2vw);

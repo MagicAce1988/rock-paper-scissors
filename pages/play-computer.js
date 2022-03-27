@@ -59,7 +59,9 @@ const PlayComputer = () => {
     setYourChoice(gameChoice);
 
     setTimeout(() => {
-      setOpponentChoice(gameChoices[1]);
+      setOpponentChoice(
+        gameChoices[Math.floor(Math.random() * gameChoices.length)]
+      );
     }, 2000);
   };
 
