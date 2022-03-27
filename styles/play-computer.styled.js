@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
+export const TopSection = styled.div`
+  width: 75vw;
+`;
+
 export const GameScoreContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 5vw;
-  width: 75vw;
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   border-radius: 5px;
@@ -22,7 +25,15 @@ export const Message = styled.h1`
   line-height: 20px;
   color: #fff;
   font-family: 'Merriweather', serif;
-  font-size: calc(12px + 1.5vw);
+  font-size: calc(12px + 1.2vw);
   text-align: center;
   text-transform: capitalize;
+`;
+
+export const BottomMessage = styled.p`
+  color: #fff;
+  font-size: 1em;
+  text-align: center;
+  text-transform: capitalize;
+  line-height: 1.5;
 `;
