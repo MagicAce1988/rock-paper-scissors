@@ -4,9 +4,26 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   padding: 5%;
+  padding-top: 0;
+  justify-content: space-between;
+`;
+
+export const TopSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+`;
+
+export const GameTitle = styled.h1`
+  color: #fff;
+  font-family: 'Merriweather', serif;
+  font-size: calc(12px + 3vw);
+  text-align: center;
+  text-transform: capitalize;
 `;
 
 export const ImagesContainer = styled.div`
@@ -32,4 +49,23 @@ export const ImageContainer = styled.div`
 
 export const BorderRadiusAdjustment = styled.div`
   width: 70%;
+`;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+export const Button = styled.button`
+  background-color: #c4c2fc;
+  color: #000;
+  font-size: 1.2rem;
+  border: 0;
+  padding: 1.1rem 3rem;
+  border-radius: 5;
+  cursor: pointer;
+  margin: 1vh 1vw;
+  min-width: 225px;
+  border-radius: 5px;
 `;
