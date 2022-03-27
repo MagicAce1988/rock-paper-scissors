@@ -18,7 +18,7 @@ export const GameScoreContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 5vw;
+  margin-top: 20px;
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   border-radius: 5px;

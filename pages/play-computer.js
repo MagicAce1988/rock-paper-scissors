@@ -10,6 +10,7 @@ import {
   BorderRadiusAdjustment,
   ImagesContainer,
   ImageContainer,
+  Button,
 } from './../styles/index.styled';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -151,6 +152,7 @@ const PlayComputer = () => {
             key={id}
             imageSize={imageSize}
             withPointer={!yourChoice}
+            withWrap={true}
           >
             <BorderRadiusAdjustment>
               <Image src={image} alt={choice} priority />
@@ -158,7 +160,15 @@ const PlayComputer = () => {
           </ImageContainer>
         ))}
       </ImagesContainer>
-      <button onClick={playAgainHandler}>Play Again</button>
+      <ParticleEffectButton
+        canvasPadding={0}
+        duration={400}
+        color="#034a96"
+        hidden={!yourChoice || !opponentChoice}
+        style="fill"
+      >
+        <Button onClick={playAgainHandler}>Play Again</Button>
+      </ParticleEffectButton>
       <Footer />
     </Container>
   );

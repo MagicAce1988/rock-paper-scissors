@@ -35,6 +35,11 @@ export const ImagesContainer = styled.div`
 
 export const ImageContainer = styled.div`
   width: ${({ imageSize }) => `${imageSize}px`};
+  ${({ withWrap }) =>
+    withWrap &&
+    `
+   min-width:120px;
+  `}
   cursor: ${({ withPointer }) => (withPointer ? 'pointer' : 'default')};
   border-radius: 50%;
   background-color: #fff;
@@ -53,7 +58,6 @@ export const ImageContainer = styled.div`
   margin: 1vw 2vw;
   opacity: 0.85;
   user-select: none;
-  min-width: 120px;
   transition: all 0.3s ease-in-out;
   transform: ${({ scaled }) => (scaled ? 'scale(1.1)' : 'scale(1.0)')};
   :hover {
@@ -84,7 +88,4 @@ export const Button = styled.button`
   min-width: 225px;
   border-radius: 5px;
   transition: transform 0.2s ease-in-out;
-  :hover {
-    transform: scale(1.05);
-  }
 `;
