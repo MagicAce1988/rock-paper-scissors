@@ -14,12 +14,18 @@ import {
 } from './../styles/index.styled';
 import { useEffect, useState } from 'react';
 import Footer from '../components.js/Footer';
+import { useRouter } from 'next/router';
 
 const Home = () => {
   // variables and state
+  const router = useRouter();
   const [imageSize, setImageSize] = useState(200);
   const [buttons, setButtons] = useState([
-    { text: 'Play Computer', hidden: false, action: () => {} },
+    {
+      text: 'Play Computer',
+      hidden: false,
+      action: () => router.push('./play-computer'),
+    },
     { text: 'Rules', hidden: false, action: () => {} },
   ]);
   const gameName = gameChoices.map((current) => current.choice).join(' · ');
@@ -69,9 +75,11 @@ const Home = () => {
           <ParticleEffectButton
             key={button.text}
             canvasPadding={0}
+            duration={400}
             color="#034a96"
             hidden={button.hidden}
             style="fill"
+            onComplete={button.action}
           >
             <Button onClick={() => buttonHandler(index)}>{button.text}</Button>
           </ParticleEffectButton>
