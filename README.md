@@ -8,14 +8,14 @@ A simple but classic game! You win or lose against the computer depending on you
 
 This website was built with Next.Js, React.js and Styled Components.
 
-Future work:
+<strong>Future work:</strong>
 
-Bug Fixes:
+<strong>Bug Fixes:</strong>
 
 1. On smaller screen sizes there is a weird layout shift due to the animated button. This needs investigating.
 2. Code refactoring and splitting.
 
-Features:
+<strong>Features:</strong>
 
 1. Allow people to create rooms so they can play against a certain person by sharing the room id using <strong>socket.io</strong>
 
@@ -25,7 +25,7 @@ Features:
 
 4. Highest Scores Modals once people have accounts
 
-Development Guide:
+<strong>Development Guide:</strong>
 
 1. Please install the dependencies with <strong>"NPM install"</strong> or <strong>"yarn"</strong> after you have first downloaded the project
 
