@@ -25,7 +25,7 @@ This website was built with Next.Js, React.js and Styled Components.
 
 3. Allow users to create account so they can track their scores.
 
-4. Highest Scores Modals once people have accounts
+4. Highest Scores Modal once people have accounts
 
 <strong>Development Guide:</strong>
 
