@@ -167,7 +167,7 @@ const Modal = ({
       {...props}
     >
       {props.children}
-      <StyledIcon icon={faClose} width={30} onClick={onRequestClose} />
+      <StyledIcon icon={faClose} width={32} onClick={onRequestClose} />
     </ReactModal>
   );
 };
