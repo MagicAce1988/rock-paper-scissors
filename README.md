@@ -38,4 +38,5 @@ This website was built with Next.Js, React.js and Styled Components.
 <strong>Social Links:</strong>
 
 [YouTube Channel](https://www.youtube.com/channel/UCMXtUzWRxZSndEJzRfm1ztg)
+
 [Linkedin](https://www.linkedin.com/in/marian-silviu-talmacel-100bb31b6/)
