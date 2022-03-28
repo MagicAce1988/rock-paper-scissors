@@ -19,13 +19,17 @@ This website was built with Next.Js, React.js and Styled Components.
 
 <strong>Features:</strong>
 
-1. Allow people to create rooms so they can play against a certain person by sharing the room id using <strong>socket.io</strong>
+1. Improve Design of the Game
 
-2. Add redux for state management
+2. Allow people to create rooms so they can play against a certain person by sharing the room id using <strong>socket.io</strong>
 
-3. Allow users to create account so they can track their scores.
+3. Add redux for state management
 
-4. Highest Scores Modal once people have accounts
+4. Allow users to create account so they can track their scores.
+
+5. Highest Scores Modal once people have accounts
+
+6. Add sounds for the choices
 
 <strong>Development Guide:</strong>
 
