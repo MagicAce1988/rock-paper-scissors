@@ -1,5 +1,7 @@
 # Rock ✊, Paper 🖐️, Scissors ✌️
 
+[Play The Game](https://rock-paper-scissors-happi.vercel.app/)
+
 A simple but classic game! You win or lose against the computer depending on your choice.
 
 - Paper beats Rock
@@ -32,3 +34,8 @@ This website was built with Next.Js, React.js and Styled Components.
 2. Run <strong>"NPM run dev"</strong> or <strong>"yarn dev"</strong> to run the development version
 
 3. Run <strong>"NPM run build"</strong> or <strong>"yarn build"</strong> to create the production version
+
+<strong>Social Links:</strong>
+
+[YouTube Channel](https://www.youtube.com/channel/UCMXtUzWRxZSndEJzRfm1ztg)
+[Linkedin](https://www.linkedin.com/in/marian-silviu-talmacel-100bb31b6/)
