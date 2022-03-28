@@ -29,22 +29,41 @@ export const GameTitle = styled.h1`
 export const ImagesContainer = styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: ${({ withWrap }) => (withWrap ? 'wrap' : 'no-wrap')};
   justify-content: center;
 `;
 
 export const ImageContainer = styled.div`
   width: ${({ imageSize }) => `${imageSize}px`};
+  ${({ withWrap }) =>
+    withWrap &&
+    `
+   min-width:120px;
+  `}
+  cursor: ${({ withPointer }) => (withPointer ? 'pointer' : 'default')};
   border-radius: 50%;
   background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   aspect-ratio: 1 / 1;
-  border: 1vw solid rgba(43, 87, 99, 0.88);
-  margin-left: 1vw;
-  margin-right: 1vw;
+  border: ${({ yourChoice, opponentChoice }) =>
+    `1vw solid ${
+      yourChoice && !opponentChoice
+        ? 'rgb(54, 255, 73)'
+        : opponentChoice && !yourChoice
+        ? 'rgb(255, 13, 85)'
+        : 'rgba(43, 87, 99, 0.88)'
+    }`};
+  margin: 1vw 2vw;
   opacity: 0.85;
   user-select: none;
+  transition: all 0.3s ease-in-out;
+  transform: ${({ scaled }) => (scaled ? 'scale(1.1)' : 'scale(1.0)')};
+  :hover {
+    transform: ${({ withPointer, scaled }) =>
+      withPointer || scaled ? 'scale(1.1)' : 'scale(1.0)'};
+  }
 `;
 
 export const BorderRadiusAdjustment = styled.div`
@@ -68,4 +87,5 @@ export const Button = styled.button`
   margin: 1vh 1vw;
   min-width: 225px;
   border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
 `;

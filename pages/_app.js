@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }) {
         <title>
           {gameChoices.map((current) => current.choice).join(' · ')}
         </title>
+        <meta name="keywords" content="rock paper scissors game" />
       </Head>
       <Component {...pageProps} />
     </>
