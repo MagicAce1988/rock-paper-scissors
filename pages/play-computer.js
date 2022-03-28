@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ParticleEffectButton from 'react-particle-effect-button';
@@ -13,7 +14,6 @@ import {
   Button,
 } from './../styles/index.styled';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import Footer from './../components/Footer/Footer';
 import {
   BottomMessage,
@@ -24,11 +24,9 @@ import {
   TopSection,
   Wins,
 } from '../styles/play-computer.styled';
-import { useRef } from 'react';
 
 const PlayComputer = () => {
   // variables and state
-  const router = useRouter();
   const [wins, setWins] = useState(0);
   const [losses, setLosses] = useState(0);
   const [yourChoice, setYourChoice] = useState(null);

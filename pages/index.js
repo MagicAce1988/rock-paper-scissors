@@ -73,10 +73,9 @@ const Home = () => {
     <>
       <RulesModal
         isOpen={rulesModalOpen}
-        offSwitch={() => {
-          setRulesModalOpen(false);
-        }}
+        offSwitch={() => setRulesModalOpen(false)}
       />
+
       <Container>
         <TopSection>
           <GameTitle>{gameName}</GameTitle>
@@ -90,6 +89,7 @@ const Home = () => {
             ))}
           </ImagesContainer>
         </TopSection>
+
         <ButtonsContainer>
           {buttons.map((button, index) => (
             <ParticleEffectButton
