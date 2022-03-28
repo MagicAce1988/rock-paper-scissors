@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const TopSection = styled.div`
   width: 75vw;
@@ -46,6 +47,10 @@ export const Message = styled.h1`
   font-size: calc(12px + 1.2vw);
   text-align: center;
   text-transform: capitalize;
+
+  ${media.lessThan('600px')`
+     display:none;
+    `}
 `;
 
 export const BottomMessage = styled.p`
